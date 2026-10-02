@@ -55,6 +55,15 @@ Sin API key se puede usar `LLM_PROVIDER=mock`: un LLM determinista que imita el 
 
 Documentación interactiva: http://localhost:8000/docs
 
+Con Docker:
+
+```bash
+docker build -t orquestador-bp .
+docker run -p 8000:8000 -e ANTHROPIC_API_KEY orquestador-bp
+```
+
+Despliegue en AWS (ECS Express Mode): ver [docs/DEPLOY_AWS.md](docs/DEPLOY_AWS.md).
+
 ## Endpoints
 
 | Método | Ruta | Descripción |
