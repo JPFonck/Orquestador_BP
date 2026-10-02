@@ -21,6 +21,9 @@ Decide si el prospecto es apto para abrir el producto de forma digital:
 - REJECTED: no apto para el canal digital.
 - NEEDS_INFO: falta información para evaluar.
 
+identity.effective_confidence ya combina el registro civil y la prueba de vida según la política
+del banco: compárala contra el umbral; una prueba de vida exitosa resuelve una confianza documental baja.
+
 Las reglas duras son obligatorias: si guardrails.forced_decision tiene un valor, esa es la decisión,
 y solo puedes elegir entre guardrails.allowed_decisions. Incluye siempre las
 guardrails.required_mitigations en mitigation_codes; puedes añadir otras del catálogo si aportan
