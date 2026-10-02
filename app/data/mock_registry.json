@@ -1,0 +1,16 @@
+{
+  "_comment": "Registro civil simulado. Documentos de 10 dígitos con provincia válida que no estén aquí se consideran encontrados con confianza 0.9.",
+  "identities": {
+    "1712345678": {"full_name": "Juan Perez", "verified": true, "confidence": 0.95},
+    "0923456789": {"full_name": "Maria Lopez", "verified": true, "confidence": 0.72},
+    "1104567890": {"full_name": "Carlos Ruiz", "verified": true, "confidence": 0.4},
+    "1708765432": {"full_name": "Desconocido", "verified": false, "confidence": 0.2},
+    "1705555555": {"full_name": "Pedro Gomez", "verified": true, "confidence": 0.93},
+    "0102030405": {"full_name": "Ana Torres", "verified": true, "confidence": 0.91}
+  },
+  "timeout_documents": ["9999999999"],
+  "liveness_tokens": {
+    "LIVENESS-OK": {"match": true, "confidence": 0.97},
+    "LIVENESS-FAIL": {"match": false, "confidence": 0.1}
+  }
+}

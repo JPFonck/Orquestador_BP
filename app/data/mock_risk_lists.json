@@ -1,0 +1,8 @@
+{
+  "_comment": "Listas de riesgo simuladas (sanciones/PEP). Coincidencia por documento = nivel de la entrada; coincidencia solo por nombre = medium (posible homónimo).",
+  "entries": [
+    {"name": "Pedro Gomez", "document_id": "1705555555", "list": "OFAC_SDN", "risk_level": "high", "reason": "Sancionado por lavado de activos"},
+    {"name": "Ana Torres", "document_id": "0102030405", "list": "PEP_LOCAL", "risk_level": "medium", "reason": "Persona Expuesta Políticamente (funcionaria pública)"},
+    {"name": "Luis Mendoza", "document_id": "0911111111", "list": "ONU_CONSOLIDADA", "risk_level": "high", "reason": "Financiamiento de terrorismo"}
+  ]
+}

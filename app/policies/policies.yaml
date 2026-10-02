@@ -1,0 +1,66 @@
+# Políticas de onboarding digital del banco (versión de referencia para el mock).
+version: "2026.10"
+
+thresholds:
+  # Confianza mínima de verify_identity para continuar sin escalamiento.
+  identity_min_confidence: 0.8
+  # Por debajo de este valor la re-verificación biométrica no basta: se propone videollamada.
+  biometric_retry_min_confidence: 0.5
+
+# Niveles de riesgo que bloquean el onboarding digital y requieren Oficial de Cumplimiento.
+escalation_risk_levels: [high]
+# Niveles de riesgo que exigen Debida Diligencia Reforzada (EDD).
+edd_risk_levels: [medium]
+
+products:
+  cuenta_ahorros:
+    display_name: Cuenta de Ahorros
+    min_age: 18
+    base_documents:
+      - code: CEDULA
+        name: Cédula de identidad vigente
+        description: Fotografía legible de ambos lados de la cédula.
+      - code: SERVICIO_BASICO
+        name: Planilla de servicio básico
+        description: Planilla de luz, agua o teléfono de los últimos 3 meses.
+      - code: CONTRATO_AHORROS
+        name: Contrato de cuenta de ahorros
+        description: Contrato firmado electrónicamente.
+  cuenta_corriente:
+    display_name: Cuenta Corriente
+    min_age: 18
+    base_documents:
+      - code: CEDULA
+        name: Cédula de identidad vigente
+        description: Fotografía legible de ambos lados de la cédula.
+      - code: SERVICIO_BASICO
+        name: Planilla de servicio básico
+        description: Planilla de luz, agua o teléfono de los últimos 3 meses.
+      - code: REFERENCIA_BANCARIA
+        name: Referencia bancaria
+        description: Certificado de otra institución financiera con antigüedad mínima de 6 meses.
+      - code: CONTRATO_CORRIENTE
+        name: Contrato de cuenta corriente
+        description: Contrato firmado electrónicamente.
+  tarjeta_credito:
+    display_name: Tarjeta de Crédito
+    min_age: 18
+    base_documents:
+      - code: CEDULA
+        name: Cédula de identidad vigente
+        description: Fotografía legible de ambos lados de la cédula.
+      - code: SUSTENTO_INGRESOS
+        name: Sustento de ingresos
+        description: Roles de pago de los últimos 3 meses o declaración de impuestos.
+      - code: AUTORIZACION_BURO
+        name: Autorización de consulta al buró de crédito
+        description: Autorización firmada electrónicamente.
+
+risk_documents:
+  medium:
+    - code: ORIGEN_FONDOS
+      name: Declaración de origen lícito de fondos
+      description: Formulario firmado que declara el origen de los fondos a depositar.
+    - code: SUSTENTO_ACTIVIDAD
+      name: Sustento de actividad económica
+      description: RUC, certificado laboral o documento equivalente.
